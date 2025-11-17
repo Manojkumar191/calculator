@@ -1,0 +1,60 @@
+<html>
+    <head> <title>calculator</title></head>
+    
+    <body style="background-color: lightblue;">
+
+        <input id="display" style="width:105px; height:25px;">
+        <div style="width:1000px; height:25px;">
+            <button class= "operator" onclick="addtodisp('+')">+</button>
+            <button class="button" onclick="addtodisp('9')">9</button>
+            <button class="button" onclick="addtodisp('8')">8</button>
+            <button class="button" onclick="addtodisp('7')">7</button>
+        </div>
+        <div style="width:1000px; height:25px;">
+            <button class="operator" onclick="addtodisp('-')">-</button>
+            <button class="button" onclick="addtodisp('4')">4</button>
+            <button class="button" onclick="addtodisp('5')">5</button>
+            <button class="button" onclick="addtodisp('6')">6</button>
+        </div>
+        <div style="width:1000px; height:25px;">
+            <button class="operator" onclick="addtodisp('*')">*</button>
+            <button class="button" onclick="addtodisp('1')">1</button>
+            <button class="button" onclick="addtodisp('2')">2</button>
+            <button class="button" onclick="addtodisp('3')">3</button>
+        </div>
+        <div style="width:1000px; height:25px;">
+            <button class="operator" onclick="addtodisp('/')">/</button>
+            <button class="button" onclick="addtodisp('0')">0</button>
+            <button class="operator1" onclick="clears()" >C</button>
+            <button class="operator2" onclick="evalu()">=</button>
+        </div>  
+    <script>
+        let disp=document.getElementById("display");
+        let button=document.getElementsByClassName("operator2")[0];
+        button.addEventListener("mouseover",()=>{
+            button.style.backgroundColor="orange";
+        }
+    );
+    button.addEventListener("mouseout",()=>
+{
+    button.style.backgroundColor="white";
+});
+        function addtodisp(a)
+        {
+            disp.value+=a;
+        }
+        function evalu()
+        {
+            disp.value=eval(disp.value);
+            disp.style.backgroundColor="lightgreen";
+        }
+        function clears()
+        {
+            disp.value="";
+            disp.style.backgroundColor="white";
+
+        }
+    </script>     
+    </body>
+    
+    </html>
