@@ -1,38 +1,70 @@
 <html>
-    <head> <title>calculator</title></head>
-    
+    <head> <title>calculator</title>
+    <style>
+        .operator{
+            border-radius:2px;
+            border-color:black;
+            background-color: rgb(240, 192, 128);
+            height:20px;
+            width:25px;
+        }
+        .button:hover,
+        .operator1:hover,
+        .operator2:hover,
+        .operator:hover{
+            opacity:0.5;
+            transition:1s;
+            background-color:grey;
+            border-color:black;
+        }
+        .operator1{
+            border-color: black;
+        }
+        .button,
+        .operator1,
+        .operator2
+        {
+            border-radius:2px;
+            background-color: rgb(241, 239, 237);
+            height:20px;
+            width:25px;
+        }
+    </style>
+    </head>
     <body style="background-color: lightblue;">
 
-        <input id="display" style="width:105px; height:25px;">
+        <input id="display" style="width:112px; height:25px;margin-bottom:3px;">
         <div style="width:1000px; height:25px;">
-            <button class= "operator" onclick="addtodisp('+')">+</button>
-            <button class="button" onclick="addtodisp('9')">9</button>
-            <button class="button" onclick="addtodisp('8')">8</button>
+            <button class= "operator" onclick="addtodisp('/')">/</button>
             <button class="button" onclick="addtodisp('7')">7</button>
+            <button class="button" onclick="addtodisp('8')">8</button>
+            <button class="button" onclick="addtodisp('9')">9</button>
         </div>
         <div style="width:1000px; height:25px;">
-            <button class="operator" onclick="addtodisp('-')">-</button>
+            <button class="operator" onclick="addtodisp('*')"  style="text-align:center;">*</button>
+            
             <button class="button" onclick="addtodisp('4')">4</button>
             <button class="button" onclick="addtodisp('5')">5</button>
             <button class="button" onclick="addtodisp('6')">6</button>
         </div>
         <div style="width:1000px; height:25px;">
-            <button class="operator" onclick="addtodisp('*')">*</button>
+            <button class="operator" onclick="addtodisp('-')">-</button>
             <button class="button" onclick="addtodisp('1')">1</button>
             <button class="button" onclick="addtodisp('2')">2</button>
             <button class="button" onclick="addtodisp('3')">3</button>
         </div>
         <div style="width:1000px; height:25px;">
-            <button class="operator" onclick="addtodisp('/')">/</button>
-            <button class="button" onclick="addtodisp('0')">0</button>
+            <button class="operator" onclick="addtodisp('+')">+</button>
             <button class="operator1" onclick="clears()" >C</button>
+            <button class="button" onclick="addtodisp('0')">0</button>
+            
             <button class="operator2" onclick="evalu()">=</button>
         </div>  
     <script>
         let disp=document.getElementById("display");
         let button=document.getElementsByClassName("operator2")[0];
         button.addEventListener("mouseover",()=>{
-            button.style.backgroundColor="orange";
+            button.style.backgroundColor="green";
         }
     );
     button.addEventListener("mouseout",()=>
@@ -57,5 +89,4 @@
     </script>     
     </body>
     
-
     </html>
